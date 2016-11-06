@@ -5,6 +5,11 @@ from sklearn.utils.class_weight import compute_class_weight
 
 
 class ClassifierLSHForest(ClassifierMixin, LSHForest):
+    """ 
+    KNeighborsClassifier with partial_fit method for online learning.
+    Memory-based classifier. Wrapper around LSHForest.
+    """
+
     def __init__(self,
                  n_estimators = 10, 
                  radius = 1.0, 
